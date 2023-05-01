@@ -6,7 +6,9 @@ describe('ScoreCard', () => {
     myScore = new ScoreCard();
   });
 
-  it('starts the score at 0', () => {
-    expect(ScoreCard.calculateScore).toBe(0);
+  it('adds a score to each frame', () => {
+    myScore.addFrame(2, 5);
+    expect(myScore.frames[0].firstRoll).toEqual(2);
+    expect(myScore.frames[0].secondRoll).toEqual(5);
   });
 });
