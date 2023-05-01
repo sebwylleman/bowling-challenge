@@ -13,7 +13,8 @@ class ScoreCard {
   calculateScore() {
     let score = 0;
     for (let i = 0; i < this.frames.length; i++) {
-      // complete
+      const frame = this.frames[i];
+      score += frame.firstRoll + frame.secondRoll;
     }
     return score;
   }
