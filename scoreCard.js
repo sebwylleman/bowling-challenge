@@ -8,6 +8,7 @@ class ScoreCard {
       secondRoll: secondRoll,
     });
   }
+  calculateScore() {}
 }
 
 module.exports = ScoreCard;
