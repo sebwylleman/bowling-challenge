@@ -33,4 +33,11 @@ describe('ScoreCard', () => {
     myScore.addFrame(4, 4);
     expect(myScore.calculateScore()).toBe(5 + 5 + 4 + 4 + 4);
   });
+
+  it('calculates the score correctly for a perfect game with bonus frames', () => {
+    for (let i = 0; i < 12; i++) {
+      myScore.addFrame(10, 0);
+    }
+    expect(myScore.calculateScore()).toBe(300);
+  });
 });
