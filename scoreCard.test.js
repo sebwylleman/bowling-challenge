@@ -21,4 +21,16 @@ describe('ScoreCard', () => {
     myScore.addFrame(2, 5);
     expect(myScore.calculateScore()).toBe(12);
   });
+
+  it('calculates the score with bonus points for strikes', () => {
+    myScore.addFrame(10, 0);
+    myScore.addFrame(7, 2);
+    expect(myScore.calculateScore()).toBe(10 + 7 + 2 + 7 + 2);
+  });
+
+  it('calculates the score with bonus points for spares', () => {
+    myScore.addFrame(5, 5);
+    myScore.addFrame(4, 4);
+    expect(myScore.calculateScore()).toBe(5 + 5 + 4 + 4 + 4);
+  });
 });
